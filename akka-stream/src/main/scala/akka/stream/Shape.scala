@@ -173,7 +173,7 @@ abstract class Shape {
   def requireSamePortsAndShapeAs(s: Shape): Unit = require(hasSamePortsAndShapeAs(s), nonCorrespondingMessage(s))
 
   private def nonCorrespondingMessage(s: Shape) =
-    s"The inlets [${s.inlets.mkString(", ")}] and outlets [${s.outlets.mkString(", ")}] must correspond to the inlets [${inlets.mkString(", ")}] and outlets [${outlets.mkString(", ")}]"
+    s"The inlets [${s.inlets.mkString(", ")}] and outlets [${s.outlets.mkString(", ")}] of outer graph must correspond to the inlets [${inlets.mkString(", ")}] and outlets [${outlets.mkString(", ")}] added inside graph"
 }
 
 /**
